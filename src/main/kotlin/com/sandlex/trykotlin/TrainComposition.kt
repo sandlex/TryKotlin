@@ -1,4 +1,4 @@
-package com.sandlex.trykotlin.train
+package com.sandlex.trykotlin
 
 import java.util.LinkedList
 
