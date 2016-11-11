@@ -10,8 +10,21 @@ import org.junit.Test
  * Write a function that checks if a given binary search tree contains a given value.
  */
 class BinarySearchTreeTest {
+
     @Test
-    fun testBstContainsShort() {
+    fun testBstContainsWithCustomObjects() {
+        val rect1 = Node(Rectangle(1), null, null)
+        val rect3 = Node(Rectangle(3), null, null)
+        val rect2 = Node(Rectangle(2), rect1, rect3)
+
+        Assert.assertTrue(bstContains(rect2, Rectangle(3)))
+        Assert.assertTrue(bstContains(rect2, Rectangle(1)))
+        Assert.assertTrue(bstContains(rect1, Rectangle(1)))
+        Assert.assertFalse(bstContains(rect2, Rectangle(7)))
+    }
+
+    @Test
+    fun testBstContainsWithIntShort() {
         val n1 = Node(1, null, null)
         val n3 = Node(3, null, null)
         val n2 = Node(2, n1, n3)
@@ -23,7 +36,7 @@ class BinarySearchTreeTest {
     }
 
     @Test
-    fun testBstContainsLong() {
+    fun testBstContainsWithIntLong() {
         val n2 = Node(2, null, null)
         val n6 = Node(6, null, null)
         val n8 = Node(8, null, null)
