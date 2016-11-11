@@ -2,25 +2,21 @@ package com.sandlex.trykotlin
 
 import java.util.LinkedList
 
-/**
- *
- * author: Alexey Peskov
- */
 class TrainComposition {
 
-    val train = LinkedList<Int>()
+    val wagons = LinkedList<Int>()
 
     fun attachWagonFromLeft(wagonId: Int) {
-        train.offerFirst(wagonId)
+        wagons.offerFirst(wagonId)
     }
 
     fun attachWagonFromRight(wagonId: Int) {
-        train.offerLast(wagonId)
+        wagons.offerLast(wagonId)
     }
 
-    fun detachWagonFromLeft(): Int = train.pollFirst()
+    fun detachWagonFromLeft(): Int = wagons.pollFirst()
 
 
-    fun detachWagonFromRight(): Int = train.pollLast()
+    fun detachWagonFromRight(): Int = wagons.pollLast()
 
 }
